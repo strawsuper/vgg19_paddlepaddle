@@ -4,6 +4,13 @@ The model is converted from Caffe model [VGG_ILSVRC_19_layers_deploy.prototxt](h
 1.Download model and param.
 - [Dropbox](https://www.dropbox.com/s/4rbkipqj2h86id6/VGG19_pd_model_param.tar.7z?dl=0)
 
+- Extract the model and params from the link, and the folder structure should looks like:
+```
+.
+├── vgg19_model
+├── vgg19_params
+```
+
 2.Usage
 - You can use like the [infer.py](./infer.py)
 - You can also use directly
