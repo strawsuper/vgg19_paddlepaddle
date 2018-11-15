@@ -21,7 +21,8 @@ program, feed_names, fetch_targets = fluid.io.load_inference_model('./VGG19_pd_m
 					exe, 'vgg19_model', 'vgg19_params')
 ```
 - You can see more detail in [inference_model/infer.py](./inference_model/infer.py)
-####Advanced
+
+ ## Advanced
 If you want to just load the param and realize your own model to use and add the loss like me:
  
  - example:
@@ -30,6 +31,7 @@ If you want to just load the param and realize your own model to use and add the
 g_loss = mse_loss + vgg_loss + g_gan_loss`
 
 I need the vgg_api in the g_program.:+1:
+
 So you can just use the load param.
 ```
 fluid.io.load_params(exe, "./vgg19_pd_params")
@@ -39,7 +41,10 @@ fluid.io.load_params(exe, "./vgg19_pd_params")
   * You can download the params in different files [link for params](https://www.dropbox.com/s/7sae9pqf042llqq/vgg19_pd_params.tar.7z?dl=0)
   
   
-  
+  - PS. The way I save the param in different files:
+  ```
+  fluid.io.save_persistables(exe,'./save_para/', inference_program)
+  ```
   Thanks for oraoto!
 I refer his code which is converted the [vgg16](https://github.com/oraoto/paddle-vgg16) for paddlepaddle.
   
